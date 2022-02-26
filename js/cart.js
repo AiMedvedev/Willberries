@@ -106,7 +106,7 @@ const cart = function() {
         }).then(() => {
             cart.style.display = '';
         });
-    }    
+    };   
     
     modalForm.addEventListener('submit', (e) => {
         e.preventDefault();
