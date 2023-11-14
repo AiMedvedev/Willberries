@@ -36,14 +36,6 @@ const getGoods = () => {
             .then((data) => {
                 const array = category ? data.filter((item) => item[category] === value) : data ;
 
-                /* if (category) {
-                    console.log('yes');
-                } else {
-                    console.log('no');
-                }
- */
-                // category ? console.log('yes') : console.log('no');
-
                 localStorage.setItem('goods', JSON.stringify(array));
 
                 if (window.location.pathname !== '/goods.html') {
@@ -68,14 +60,6 @@ const getGoods = () => {
     if (localStorage.getItem('goods') && window.location.pathname === '/goods.html') {
         renderGoods(JSON.parse(localStorage.getItem('goods')));
     }
-
-    /* localStorage.setItem('goods', JSON.stringify([1, 2, 3, 4, 5]));
-
-    const goods = JSON.parse(localStorage.getItem('goods'));
-    console.log(goods); 
-    
-    localStorage.removeItem('goods');
-    console.log(localStorage); */
 
     if (more) {
         more.addEventListener('click', (event) => {

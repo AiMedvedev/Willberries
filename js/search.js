@@ -34,14 +34,7 @@ const search = function() {
             .then((res) => res.json())
             .then((data) => {
                 const array = data.filter(good => good.name.toLowerCase().includes(value.toLowerCase()));
-                /* if (category) {
-                    console.log('yes');
-                } else {
-                    console.log('no');
-                }
- */
-                // category ? console.log('yes') : console.log('no');
-
+                
                 localStorage.setItem('goods', JSON.stringify(array));
 
                 if (window.location.pathname !== '/goods.html') {
@@ -56,20 +49,6 @@ const search = function() {
     searchBtn.addEventListener('click', () => {
         getData(input.value);
     });
-
-    /* input.addEventListener('input', (event) => {
-        console.log(event.target.value);
-    }); */
-
-    /* try {
-    searchBtn.addEventListener('click', () => {
-        console.log(input.value);
-    });
-    } catch(e) {
-        console.error(e.message);
-    } */
 };
-
-
 
 search();
